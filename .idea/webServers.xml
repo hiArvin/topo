@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6a1aa7c5-f0c4-433a-a605-524bcab29ffb" name="mytopo">
+        <fileTransfer rootFolder="/home/holan" accessType="SFTP" host="a534.ink19.cn" port="22" sshConfigId="8dd4cea7-fe3c-4e9f-bb76-3fb85ca348c7" sshConfig="holan@a534.ink19.cn:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
