@@ -40,7 +40,6 @@ class MyTopo(Topo):
                          loss=self.__losses[i], max_queue_size=1000)
 
 
-
     '''add host for each switch(node)'''
     def add_hosts(self):
         if self.__nodenum >= 255:
@@ -98,13 +97,14 @@ if __name__ == "__main__":
 
     mytopo = MyTopo(nodeNum,linkSet,bandwidths,losses)
 
-    CONTROLLER_IP = "127.0.0.1"  # Your ryu controller server IP
-    CONTROLLER_PORT = 5001
+    # CONTROLLER_IP = "127.0.0.1"  # Your ryu controller server IP
+    # CONTROLLER_PORT = 5001
     OVSSwitch13 = partial(OVSSwitch, protocols='OpenFlow13')
     net = Mininet(topo=mytopo, switch=OVSSwitch13, link=TCLink, controller=None)
     net.addController('controller', controller=RemoteController)
     net.start()
-
+    # h1,h2= net.get('h1','h2')
+    # net.iperf((h1,h2))
 
     eps = 0
     port = 9000
@@ -119,3 +119,4 @@ if __name__ == "__main__":
         eps += 1
 
     CLI(net)
+    net.stop()
